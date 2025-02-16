@@ -1,6 +1,6 @@
 import pandas as pd
 
-games_data_df = pd.read_excel('games_2022.xlsx', sheet_name='games_2022')
+games_data_df = pd.read_excel('Data\games_2022.xlsx', sheet_name='games_2022')
 
 games_data_cleaned = games_data_df.copy()
 
@@ -19,4 +19,4 @@ numeric_columns = ['FGA_2', 'FGM_2', 'FGA_3', 'FGM_3', 'FTA', 'FTM', 'AST', 'att
                    'tz_dif_H_E', 'prev_game_dist', 'travel_dist']
 games_data_cleaned[numeric_columns] = games_data_cleaned[numeric_columns].apply(pd.to_numeric, errors='coerce')
 
-games_data_cleaned.to_excel('cleaned_games_data.xlsx', index=False)
+games_data_cleaned.to_excel('Data\cleaned_games_data.xlsx', index=False)
